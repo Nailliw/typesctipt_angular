@@ -28,8 +28,11 @@ nameText = `O nome dele é: ${name1}`;
 // Array
 
 let arrayStrings: string[] = ['a', 'b', 'c'];
-
 let arrayExample: Array<string> = ['a', 'os'];
-
 let arrayAny: Array<any> = ['a', false, 0];
+
+
 // Enum
+enum estado_civil {Solteiro, Casado, Divorciado};
+
+let meu_estado_civil: estado_civil = estado_civil.Casado;
