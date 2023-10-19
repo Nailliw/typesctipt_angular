@@ -8,6 +8,8 @@ import { BannerComponent } from './banner/banner.component';
 import { ListaProdutosComponent } from './lista-produtos/lista-produtos.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { FooterComponent } from './footer/footer.component';
+import { FormsModule } from '@angular/forms';
+import { Exercicios1Component } from './exercicios/exercicios1/exercicios1.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { FooterComponent } from './footer/footer.component';
     BannerComponent,
     ListaProdutosComponent,
     ProdutoComponent,
-    FooterComponent
+    FooterComponent,
+    Exercicios1Component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

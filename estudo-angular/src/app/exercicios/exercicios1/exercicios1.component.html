@@ -1,0 +1,15 @@
+<input type="text" placeholder="Digite o nome" [(ngModel)]="nome" />
+<input type="text" placeholder="Digite o sobrenome" [(ngModel)]="sobrenome" />
+<button (click)="execute()"> Enviar</button>
+
+<p>
+    Concatenação dos dois nomes: {{concatenacaoNomes}}
+</p>
+<br>
+<p>
+    As Iniciais: {{iniciais}}
+</p>
+<br>
+<p>
+    A soma do tamanho dos dois nomes: {{soma}}
+</p>

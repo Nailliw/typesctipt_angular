@@ -1,5 +1,7 @@
 <p>lista-produtos works!</p>
 <br>
+<input type="text" placeholder="Digite o nome do produto" [(ngModel)]="query" />
+<button (click)="pesquisar()"> Pesquisar {{query}}</button>
 <app-produto></app-produto>
 <app-produto></app-produto>
 <app-produto></app-produto>

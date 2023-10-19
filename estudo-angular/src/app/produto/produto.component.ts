@@ -16,4 +16,9 @@ export class ProdutoComponent {
   adicionarProduto() {
     alert("O produto " + this.nomeDoProduto + " foi adicionado!");
   }
+
+  promocao() {
+    this.altura += 50;
+    this.largura += 50;
+  }
 }

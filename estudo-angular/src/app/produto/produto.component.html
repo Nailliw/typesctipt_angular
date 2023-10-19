@@ -1,6 +1,6 @@
 <div>
     <p>{{nomeDoProduto}}</p>
     <p>R$ {{preco}}</p>
-    <img [src]='linkImagem' [width]="largura" [height]="altura" /> <br>
-    <button>Adicionar ao carrinho</button>
+    <img [src]='linkImagem' [width]="largura" [height]="altura" (mouseenter)="promocao()" /> <br>
+    <button (click)="adicionarProduto()">Adicionar ao carrinho</button>
 </div>

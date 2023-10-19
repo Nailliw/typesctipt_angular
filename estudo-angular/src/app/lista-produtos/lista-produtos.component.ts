@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./lista-produtos.component.css']
 })
 export class ListaProdutosComponent {
+  query: string = '';
 
+  pesquisar() {
+    this.query = '';
+  }
 }
