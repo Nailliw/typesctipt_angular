@@ -1,0 +1,73 @@
+<p *ngIf="isOn; else isOff">Servidor está ligado!</p>
+
+<ng-template #isOff>
+    <p>Servidor está desligado!</p>
+</ng-template>
+
+<button (click)="toggle()">Ligar/Desligar</button>
+
+<hr />
+
+<p>{{counter}}</p>
+
+<p *ngIf="counter > 5; else menorCinco">Maior que 5!</p>
+
+<ng-template #menorCinco>
+    <p>Menor que 5</p>
+</ng-template>
+
+<button (click)="aumentar()">Aumentar</button>
+<button (click)="diminuir()">Diminunir</button>
+
+<br />
+<br />
+<br />
+
+<h4>Lista de compras</h4>
+
+<ul>
+    <li *ngFor="let produto of listaCompras">
+        {{produto}}
+    </li>
+</ul>
+
+<br />
+<br />
+<br />
+
+<table class="table-alunos">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Média</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let aluno of alunos; index as i">
+            <td>{{i + 1}}</td>
+            <td>{{aluno.nome}}</td>
+            <td>{{aluno.email}}</td>
+            <td>{{aluno.media}}</td>
+            <td>
+                <button (click)="alertar(aluno)">Alertar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<br>
+<br>
+
+<select [(ngModel)]="selectedRole">
+    <option *ngFor="let role of roles">{{role.name}}</option>
+</select>
+
+<div [ngSwitch]="selectedRole">
+    <p *ngSwitchCase="'empty'">Ligado</p>
+    <p *ngSwitchCase="'unknow'">Desligado</p>
+    <p *ngSwitchDefault>Sem informações</p>
+</div>

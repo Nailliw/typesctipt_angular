@@ -1,0 +1,52 @@
+<form class="container my-5" (ngSubmit)="onSubmit()" [formGroup]="form">
+    <div class="mb-3">
+        <label for="nome" class="mb-2 form-label"><b>Name</b></label>
+        <input type="text" id="nome" class="form-control" formControlName="nome" [ngClass]="{
+                'is-valid': nome.valid,
+                'is-invalid': nome.touched && nome.invalid,
+            }" />
+        <div *ngIf="nome.touched && nome.invalid" class="invalid-feedback">Nome inválido</div>
+    </div>
+
+    <div class="mb-3">
+        <label for="email" class="mb-2 form-label">Email</label>
+        <input type="email" name="email" id="email" class="form-control" formControlName="email" [ngClass]="{
+            'is-valid': email.valid,
+            'is-invalid': email.touched && email.invalid,
+        }">
+        <div *ngIf="email.touched && email.invalid" class="invalid-feedback">Email inválido</div>
+    </div>
+
+    <div class="mb-3">
+        <label for="nivel" class="form-control">Nível de ensino</label>
+        <select name="" id="nivel" class="form-select" formControlName="nivel" [ngClass]="{
+            'is-valid': nivel.valid
+        }">
+            <option value="" selected disabled>Selecione um nível</option>
+            <option value="1">Ensino Fundamental II</option>
+            <option value="2">Ensino Fundamental I</option>
+            <option value="3">Ensino Médio</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="cidade" class="form-label">Cidade</label>
+        <input type="text" id="cidade" class="form-control" formControlName="cidade" [ngClass]="{
+            'is-valid': cidade.valid,
+            'is-invalid': cidade.invalid && cidade.touched 
+        }">
+        <div *ngIf="cidade.touched && cidade.invalid" class="invalid-feedback">Cidade inválida</div>
+    </div>
+
+    <div class="mb-3">
+        <label for="estado" class="form-label">Estado</label>
+        <input type="text" id="estado" class="form-control" formControlName="estado" [ngClass]="{
+            'is-invalid': estado.touched && estado.invalid,
+            'is-valid': estado.valid
+        }">
+        <div *ngIf="estado.touched && estado.invalid" class="invalid-feedback">Estado inválido</div>
+
+    </div>
+
+    <button [disabled]="form.invalid" class="btn btn-primary">Enviar</button>
+</form>

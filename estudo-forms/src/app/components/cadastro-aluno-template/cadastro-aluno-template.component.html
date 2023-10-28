@@ -1,0 +1,61 @@
+<form #form="ngForm" (ngSubmit)="onSubmit()" class="container my-5">
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome completo</label>
+        <input type="text" id="nome" class="form-control" name="nome" [(ngModel)]="aluno.nome" minlength="8" required
+            #nome="ngModel" [ngClass]="{
+                'is-invalid': nome.invalid && nome.touched,
+                'is-valid': nome.valid
+            }">
+        <div *ngIf="nome.touched && nome.invalid" class="invalid-feedback">
+            Nome inválido
+        </div>
+    </div>
+
+
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" id="email" class="form-control" name="email" [(ngModel)]="aluno.email">
+    </div>
+
+    <div class="mb-3">
+        <label for="descricao" class="form-label">Descricao do aluno</label>
+        <textarea class="form-control" id="descricao" rows="3" name="descricao"
+            [(ngModel)]="aluno.descricao"></textarea>
+    </div>
+
+
+    <div class="mb-3">
+        <label for="nivel" class="form-label">Nível de ensino</label>
+        <select id="nivel" name="nivel" [(ngModel)]="aluno.nivel">
+            <option selected disabled value="">Selecione um nível</option>
+            <option value="">Ensino Fundamental I</option>
+            <option value="">Ensino Fundamental I</option>
+            <option value="">Ensino Médio</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <div class="form-check">
+            <input type="checkbox" name="usuario-sistema" [(ngModel)]="aluno.usuarioAtivo" id="usuario-sistema"
+                class="form-check-input">
+            <label for="usuario-sistema" class="form-check-label">Usuário do Sistema?</label>
+        </div>
+    </div>
+
+    <div class="mb-3" *ngIf="aluno.usuarioAtivo">
+        <label for="senha" class="form-label">Senha</label>
+        <input type="password" name="senha" [(ngModel)]="aluno.senha" id="senha" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label for="cidade" class="form-label">Cidade</label>
+        <input required type="text" name="cidade" [(ngModel)]="aluno.endereco.cidade" id="cidade" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label for="estado" class="form-label">Estado</label>
+        <input required type="text" name="estado" [(ngModel)]="aluno.endereco.estado" id="estado" class="form-control">
+    </div>
+
+    <button class="btn btn-primary" [disabled]="form.invalid" type="submit">Enviar</button>
+</form>
