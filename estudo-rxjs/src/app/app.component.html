@@ -1,0 +1,12 @@
+<app-teste-observable></app-teste-observable>
+
+<div (click)="alternar()">
+  <button class="btn btn-secondary">Alternar</button>
+
+</div>
+<app-relogio *ngIf="showClock"></app-relogio>
+
+<div class="grid grid-2">
+  <div>Latitutde: {{coordenadas?.latitude | json }}</div>
+  <div>Longitude: {{coordenadas?.longitude | json }}</div>
+</div>

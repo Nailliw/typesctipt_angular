@@ -1,28 +1,21 @@
-# Typescript e Angular
+EXERCICIOS DISPONÍVEIS EM:
 
-Projeto para estudar Typescript e Angular
-
-## TypeScript
-### Instalação
-
-Instale o NodeJS, pesquisar o download no site oficial mesmo.
-
-Após instalação verificar as versões do Node e npm:
+Execute os seguintes comandos:
 
 ```bash
-  node -V
-  npm -v
+
+cd .\estudo-http\
+
+json-server --watch db.json/
+
 ```
 
-Instale o TypeScript de forma global:
+ Abra um segundo terminar e execute:
 
-```bash
-  npm install -g typescript
+ ```bash
+
+cd .\estudo-http\
+
+ng serve --o
+
 ```
-    
-Verifique a instalação do TypeScript:
-
-```bash
-  tsc -v
-```
-
